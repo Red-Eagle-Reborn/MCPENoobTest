@@ -4,18 +4,26 @@
 <body>
 <div>
 <?php
-$file;
-$rnd = rand(0,3);
-if($rnd == 1) {
 $file = file_get_contents("../question/quest1.txt");
-echo $file;
+$jsonFile = json_decode($file,true);
+$rnd = rand(0,3);
+$output;
+if($rnd == 1) {
+  foreach($jsonFile["question"] as $q1) {
+    for($i = 0; i < 10; i++) {
+      $output .= "<form method=\"POST\" action=\"result.php\"";
+      $output .= $i . ". <b>" . $q1["quest"] . "</b><br>";
+      $output .= "<input type=\"radio\" name=\"quest" . $i . "\" value=\"" . $q1["opt1"] . "\">";
+      $output .= "<input type=\"radio\" name=\"quest" . $i . "\" value=\"" . $q1["opt2"] . "\">";
+      $output .= "<input type=\"radio\" name=\"quest" . $i . "\" value=\"" . $q1["opt3"] . "\">";
+      $output .= "<input type=\"radio\" name=\"quest" . $i . "\" value=\"" . $q1["opt4"] . "\">";
+    }
+  }
 }
 if($rnd == 2) {
-$file = file_get_contents("../question/quest2.txt");
 echo $file;
 }
 if($rnd == 3) {
-$file = file_get_contents("../question/quest3.txt");
 echo $file;
 }
 ?>
