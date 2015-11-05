@@ -6,4 +6,4 @@ We just release a website and applications for indonesian sorry about that !<br>
 Website :<br>
 noobtest.mcpei.net [ On Development, it's not available now ]<br>
 Apps :<br>
-- Cooming Soon
+- Coming Soon
