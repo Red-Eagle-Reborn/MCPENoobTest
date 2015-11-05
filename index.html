@@ -36,14 +36,19 @@
 				background: url("res/bg.png");
 				color: white;
 			}
+			@media (min-width: 750px){
+				#nav{
+					float: right;
+				}
+			}
 		</style>
 		<div class="container">
-			<div class="row">
+			<div class="row" style="margin-top: 5%;">
 				<div class="three columns">
 					<a href="index.html" class="nav"><h4>Noob Test</h4></a>
 				</div>
 				<div class="eight columns">
-					<ul class="u-pull-right" style="list-style-type: none">
+					<ul id="nav" style="list-style-type: none">
 						<li><a href="about.html" class="nav"><h4>About</h4></a></li>
 					</ul>
 				</div>
