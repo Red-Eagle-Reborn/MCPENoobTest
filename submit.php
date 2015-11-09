@@ -1,6 +1,6 @@
 <?php
 	$answers = json_decode(file_get_contents("php://input"));
-	foreach($answers as $a){
-		echo $a;
+	for($i = 0; $i < count($answers); $i++){
+		echo $answers[$i];
 	}
 ?>
