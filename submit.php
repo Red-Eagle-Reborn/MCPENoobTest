@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="res/skeleton/css/skeleton.css">
     <!-- Raleway -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <title>MCPE Quiz: Test</title>
+    <title>MCPE Quiz: About</title>
   </head>
   <body>
     <style>
@@ -61,50 +61,26 @@
       </div>
       <div class="row">
         <div class="twelve columns box">
-					<form method="POST" action="result.php" id="qa">
-						<span id="q" style="font-size: 3rem;"></span><br>
-						<input name="ans" type="radio" id="ans1" value=""><span id="ans1l" style="margin-left: 1rem;"></span>
-						<br>
-						<input name="ans" type="radio" id="ans2" value=""><span id="ans2l" style="margin-left: 1rem;"></span>
-						<br>
-						<input name="ans" type="radio" id="ans3" value=""><span id="ans3l" style="margin-left: 1rem;"></span>
-						<br>
-						<input name="ans" type="radio" id="ans4" value=""><span id="ans4l" style="margin-left: 1rem;"></span>
-						<br>
-						<a href="#" class="button button-primary" id="next">Next Question</a>
-					</form>
-					<script>
-						document.getElementById("next").addEventListener("click", nextQuestion);
-
-						var answers = new Array();
-						var qnum = 0;
-						var json;
-						var jsonreq = new XMLHttpRequest();
-						jsonreq.addEventListener("load", load);
-						jsonreq.open("GET", "question/quest.json");
-						jsonreq.send();
-
-						function load(){
-							json = JSON.parse(this.responseText);
-							nextQuestion();
-						}
-
-						function nextQuestion(){
-							document.getElementById("q").innerHTML = json.questions[qnum]["question"];
-							document.getElementById("ans1").value = json.questions[qnum]["opt1"];
-							document.getElementById("ans2").value = json.questions[qnum]["opt2"];
-							document.getElementById("ans3").value = json.questions[qnum]["opt3"];
-							document.getElementById("ans4").value = json.questions[qnum]["opt4"];
-
-							document.getElementById("ans1l").innerHTML = json.questions[qnum]["opt1"];
-							document.getElementById("ans2l").innerHTML = json.questions[qnum]["opt2"];
-							document.getElementById("ans3l").innerHTML = json.questions[qnum]["opt3"];
-							document.getElementById("ans4l").innerHTML = json.questions[qnum]["opt4"];
-
-							answers[qnum] = document.getElementById("qa").elements["ans"];
-							qnum++;
-						}
-					</script>
+          <?php
+            $file = file_get_contents("question/quest.json");
+            $jsonFile = json_decode($file,true);
+            $rnd = rand(1,1);
+            $output = "<form method=\"POST\" action=\"result.php\">";
+            if($rnd == 1) {
+              foreach($jsonFile["questions"] as $q1) {
+                for($i = 0; i < 10; $i++) {
+                  $output .= $i . ". <b>" . $q1["question"] . "</b><br>";
+                  $output .= "<input type='radio' name=\"quest{$i}\" value=\"{$q1['opt1']}\">";
+                  $output .= "<input type='radio' name=\"quest{$i}\" value=\"{$q1['opt2']}\">";
+                  $output .= "<input type='radio' name=\"quest{$i}\" value=\"{$q1['opt3']}\">";
+                  $output .= "<input type='radio' name=\"quest{$i}\" value=\"{$q1['opt4']}\">";
+                }
+              }
+              $output .= "<input type='submit' value='Submit'>";
+              $output .= "</form>";
+              echo $output;
+            }
+          ?>
         </div>
       </div>
       <div class="row">

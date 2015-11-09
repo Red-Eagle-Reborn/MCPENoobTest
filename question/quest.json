@@ -1,11 +1,11 @@
 {
-  "question": [
+  "questions": [
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Siapakah Notch",
+      "opt1": "Pencipta Minecraft",
+      "opt2": "Saudara Herobrine",
+      "opt3": "CEO Microsoft",
+      "opt4": "Gak Tau, Ga Kenal"
     },
     {
       "question": "",
@@ -69,6 +69,6 @@
       "opt2": "",
       "opt3": "",
       "opt4": ""
-    },
+    }
   ]
 }
