@@ -77,7 +77,9 @@
       </div>
 			<div class="row" id="result" style="display: none;">
 				<div class="twelve columns box">
+					<span id="resulttext"></span>
 				</div>
+			</div>
 			</div>
 			<script>
 						document.getElementById("next").addEventListener("click", nextQuestion);
@@ -96,7 +98,7 @@
 						}
 
 						function loadQ(){
-							document.getElementById("q").innerHTML = json.questions[qnum]["question"];
+							document.getElementById("q").innerHTML = qnum+1+". " + json.questions[qnum]["question"];
 							document.getElementById("ans1").value = json.questions[qnum]["opt1"];
 							document.getElementById("ans2").value = json.questions[qnum]["opt2"];
 							document.getElementById("ans3").value = json.questions[qnum]["opt3"];
@@ -112,21 +114,25 @@
 							answers[qnum] = document.getElementById("qa").elements["ans"].value;
 							qnum += 1;
 							loadQ();
-							if(qnum == json.questions.length-1){
+							if(qnum+1 == json.questions.length){
 								document.getElementById("next").innerHTML = "Submit quiz!";
 								document.getElementById("next").removeEventListener("click", nextQuestion);
 								document.getElementById("next").addEventListener("click", function(){
+									answers[qnum] = document.getElementById("qa").elements["ans"].value;
 									document.getElementById("quizcol").style.display = "none";
 									document.getElementById("result").style.display = "block";
 
 									var result = new XMLHttpRequest();
+									result.addEventListener("load", finres);
 									result.open("POST", "submit.php");
-									result.addEventListener("load", function(){
-										document.getElementById("result").innerHTML = this.responseText;
-									});
+									result.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 									result.send(JSON.stringify(answers));
 								});
 							}
+						}
+
+						function finres(){
+							document.getElementById("resulttext").innerHTML = this.responseText;
 						}
 					</script>
 
