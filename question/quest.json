@@ -1,46 +1,46 @@
 {
   "questions": [
     {
-      "question": "Siapakah Notch",
+      "question": "Siapakah Notch ?",
       "opt1": "Pencipta Minecraft",
       "opt2": "Saudara Herobrine",
       "opt3": "CEO Microsoft",
       "opt4": "Gak Tau, Ga Kenal"
     },
     {
-      "question": "Ngentod",
-      "opt1": "a",
-      "opt2": "b",
-      "opt3": "d",
-      "opt4": "c"
+      "question": "Kapan kah MCPE v0.1.1 release ?",
+      "opt1": "August 16, 2011",
+      "opt2": "October 7, 2011",
+      "opt3": "December 14, 2011",
+      "opt4": "February 11, 2012"
     },
     {
-      "question": "Ngentod2",
-      "opt1": "a",
-      "opt2": "b",
-      "opt3": "d",
-      "opt4": "c"
+      "question": "Bagaimana Cara MINE Obsidian ?",
+      "opt1": "Tentu saja dengan Iron Pickaxe",
+      "opt2": "Ya Diamond Hoe lah  !",
+      "opt3": "Diamond Pickaxe donk.",
+      "opt4": "Hancurin pake tangan."
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Block Apa yang Bisa Diambil Oleh Enderman ?",
+      "opt1": "Snow",
+      "opt2": "Diamond Block",
+      "opt3": "TNT",
+      "opt4": "Obsidian"
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Mobs Pertama di MCPE",
+      "opt1": "Skeleton",
+      "opt2": "Creeper",
+      "opt3": "Spider",
+      "opt4": "Zombie"
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Mobs yang gampang dikill memakai snowball",
+      "opt1": "Enderman dan Blaze",
+      "opt2": "Blaze and Magma Cubes",
+      "opt3": "Snowball itu apa?",
+      "opt4": "Spider dan Magma Cubes"
     },
     {
       "question": "",
