@@ -59,7 +59,7 @@
           </ul>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="quizcol">
         <div class="twelve columns box">
 					<form method="POST" action="result.php" id="qa">
 						<span id="q" style="font-size: 3rem;"></span><br>
@@ -73,7 +73,13 @@
 						<br>
 						<a href="#" class="button button-primary" id="next">Next Question</a>
 					</form>
-					<script>
+        </div>
+      </div>
+			<div class="row" id="result" style="display: none;">
+				<div class="twelve columns box">
+				</div>
+			</div>
+			<script>
 						document.getElementById("next").addEventListener("click", nextQuestion);
 
 						var answers = new Array();
@@ -86,10 +92,10 @@
 
 						function load(){
 							json = JSON.parse(this.responseText);
-							nextQuestion();
+							loadQ();
 						}
 
-						function nextQuestion(){
+						function loadQ(){
 							document.getElementById("q").innerHTML = json.questions[qnum]["question"];
 							document.getElementById("ans1").value = json.questions[qnum]["opt1"];
 							document.getElementById("ans2").value = json.questions[qnum]["opt2"];
@@ -100,13 +106,30 @@
 							document.getElementById("ans2l").innerHTML = json.questions[qnum]["opt2"];
 							document.getElementById("ans3l").innerHTML = json.questions[qnum]["opt3"];
 							document.getElementById("ans4l").innerHTML = json.questions[qnum]["opt4"];
+						}
 
-							answers[qnum] = document.getElementById("qa").elements["ans"];
-							qnum++;
+						function nextQuestion(){
+							answers[qnum] = document.getElementById("qa").elements["ans"].value;
+							qnum += 1;
+							loadQ();
+							if(qnum == json.questions.length-1){
+								document.getElementById("next").innerHTML = "Submit quiz!";
+								document.getElementById("next").removeEventListener("click", nextQuestion);
+								document.getElementById("next").addEventListener("click", function(){
+									document.getElementById("quizcol").style.display = "none";
+									document.getElementById("result").style.display = "block";
+
+									var result = new XMLHttpRequest();
+									result.open("POST", "submit.php");
+									result.addEventListener("load", function(){
+										document.getElementById("result").innerHTML = this.responseText;
+									});
+									result.send(JSON.stringify(answers));
+								});
+							}
 						}
 					</script>
-        </div>
-      </div>
+
       <div class="row">
         <div class="twelve columns center" style="margin-top: 20%;"><h6>Design (C)opyright BlueRizk 2015, using <a href="http://getskeleton.com">Skeleton</a></h6></div>
       </div>
