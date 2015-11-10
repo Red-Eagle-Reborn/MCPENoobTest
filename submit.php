@@ -90,4 +90,24 @@
 	if($answers[9] === "A"){
 		$point += $pro;
 	}
+	if($point == 20) {
+		echo "Kamu Mendapatkan Point Sebesar <b>";
+		echo $point."</b><br>";
+		echo "Kamu Berada Di tingkat <center><b>PRO</b></center>";
+	}
+	
+	if($point <= 15 && $point > 10) {
+		echo "Kamu Mendapatkan Point Sebesar <b>";
+		echo $point."</b><br>";
+		echo "Kamu Berada Di tingkat <center><b>Semi - PRO</b></center>";
+	}
+	
+	if($point <= 10) {
+		echo "<center>";
+		echo "Kamu Mendapatkan Point Sebesar <b>";
+		echo $point."</b><br>";
+		echo "Kamu Berada Di tingkat <b>Noobie</b>";
+		echo "</center>";
+	}
+	
 ?>
