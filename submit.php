@@ -61,12 +61,33 @@
 	}
 	
 	if($answers[6] === "A"){
-		$point += $noobie;
+		$point += $pro;
 	}
-	if($answers[6] === "B"){
+	if($answers[6] === "D"){
 		$point += $noobie;
 	}
 	if($answers[6] === "C"){
+		$point += $noobie;
+	}
+	
+	if($answers[7] === "A"){
+		$point += $noobie;
+	}
+	if($answers[7] === "B"){
+		$point += $noobie;
+	}
+	if($answers[7] === "C"){
+		$point += $pro;
+	}
+	
+	if($answers[8] === "A"){
+		$point += $pro;
+	}
+	if($answers[8] === "C"){
+		$point += $noobie;
+	}
+	
+	if($answers[9] === "A"){
 		$point += $pro;
 	}
 ?>
