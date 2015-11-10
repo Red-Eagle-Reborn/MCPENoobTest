@@ -50,11 +50,11 @@
       "opt4": "Hmm, Mungkin bakal drop lgi bednya ?"
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Apa yang terjadi jika kita break bedrock di creative?",
+      "opt1": "Ga bisa lah, bedrock kan keras",
+      "opt2": "Jatuh trus respawn",
+      "opt3": "Jatuh ke Void",
+      "opt4": "MENEKETEHEK LAH"
     },
     {
       "question": "",
