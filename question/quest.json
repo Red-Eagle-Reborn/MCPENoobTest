@@ -57,18 +57,18 @@
       "opt4": "MENEKETEHEK LAH"
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Bisakah MCPE iOS dan Android join di server yang sama atau bermain local multiplayer?",
+      "opt1": "Bisa",
+      "opt2": "Ga bisa",
+      "opt3": "Mungkin",
+      "opt4": "Ga tau"
     },
     {
-      "question": "",
-      "opt1": "",
-      "opt2": "",
-      "opt3": "",
-      "opt4": ""
+      "question": "Apakah MCPE ada Di Versi android ?",
+      "opt1": "Ya",
+      "opt2": "Tidak",
+      "opt3": "Mungkin",
+      "opt4": "Ga tau"
     }
   ]
 }
