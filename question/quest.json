@@ -43,7 +43,7 @@
       "opt4": "Spider dan Magma Cubes"
     },
     {
-      "question": "Apa yang terjadi jika kamu meletakan Bed di nether?",
+      "question": "Apa yang terjadi jika kamu tidur di Bed yang diletakan di nether?",
       "opt1": "Meledak lah, apa lagi",
       "opt2": "Ga tau juga",
       "opt3": "Ga terjadi apa - apa",
@@ -52,7 +52,7 @@
     {
       "question": "Apa yang terjadi jika kita break bedrock di creative?",
       "opt1": "Ga bisa lah, bedrock kan keras",
-      "opt2": "Jatuh trus respawn",
+      "opt2": "Mateeee lah",
       "opt3": "Jatuh ke Void",
       "opt4": "MENEKETEHEK LAH"
     },
