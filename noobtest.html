@@ -72,6 +72,7 @@
 						<br>
 						<a href="#" class="button button-primary" id="next">Next Question</a>
 					</form>
+					<span>Time: <span id="timer">0</span</span>
         </div>
       </div>
 			<div class="row" id="result" style="display: none;">
@@ -82,6 +83,11 @@
 			</div>
 			<script>
 						document.getElementById("next").addEventListener("click", nextQuestion);
+
+						var timer = 0;
+						var maxtimer = 30;
+
+						var timerint = setInterval(function(){ timer+=1; if(timer >= maxtimer){ clearInterval(timerint); } document.getElementById("timer").innerHTML = timer;}, 1000);
 
 						var answers = new Array();
 						var qnum = 0;
