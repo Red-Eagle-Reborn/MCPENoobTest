@@ -87,7 +87,7 @@
 						var timer = 0;
 						var maxtimer = 30;
 
-						var timerint = setInterval(function(){ timer+=1; if(timer >= maxtimer){ clearInterval(timerint); } document.getElementById("timer").innerHTML = timer;}, 1000);
+						var timerint = setInterval(function(){ timer+=1; if(timer >= maxtimer){ clearInterval(timerint); document.getElementById("next").style.display = "none"; alert("Waktu Habis!");} document.getElementById("timer").innerHTML = timer;}, 1000);
 
 						var answers = new Array();
 						var qnum = 0;
@@ -117,8 +117,11 @@
 						}
 
 						function nextQuestion(){
+							if(document.getElementById("qa").elements["ans"].value == ""){ return; }
 							answers[qnum] = document.getElementById("qa").elements["ans"].value;
 							qnum += 1;
+							timer = 0;
+							document.getElementById("timer").innerHTML = 0;
 							loadQ();
 							if(qnum+1 == json.questions.length){
 								document.getElementById("next").innerHTML = "Submit quiz!";
